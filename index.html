@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FOLLICLE — Advanced Hair Restoration & Aesthetics (Demo)</title>
+<meta name="description" content="Demo website for a fictional hair restoration clinic. Personalized, medically guided hair restoration.">
+<meta property="og:title" content="FOLLICLE — Advanced Hair Restoration & Aesthetics">
+<link rel="canonical" href="https://example.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F7F5F0;--white:#fff;--forest:#173C32;--ink:#171B19;--sage:#A5B5A5;--gold:#C7A77A;--mute:#5d665f;--bg:var(--ivory);--fg:var(--ink);--card:var(--white);--line:rgba(23,27,25,.14);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101512;--fg:#F1EEE7;--card:#18201c;--mute:#a3aca5;--line:rgba(255,255,255,.14)}}
+:root[data-theme="dark"]{--bg:#101512;--fg:#F1EEE7;--card:#18201c;--mute:#a3aca5;--line:rgba(255,255,255,.14)}
+html{scroll-padding-top:90px}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.65 var(--sans);overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0}
+h1{font-size:clamp(2.8rem,8vw,6.2rem)}h2{font-size:clamp(2.1rem,5vw,3.8rem)}h3{font-size:1.7rem}
+a{color:inherit}p{margin:0 0 1rem}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+section{padding:clamp(64px,10vw,130px) 0}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.mute{color:var(--mute)}
+.btn{display:inline-flex;gap:.6rem;align-items:center;padding:.95rem 1.7rem;border-radius:999px;border:1px solid var(--forest);background:var(--forest);color:#fff;text-decoration:none;font-weight:500;font-size:.92rem;cursor:pointer;transition:transform .3s,background .3s}
+.btn:hover{transform:translateY(-2px);background:#0f2b23}.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.arrow{display:inline-block;transition:transform .3s}a:hover .arrow,.btn:hover .arrow{transform:translateX(6px)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s,box-shadow .4s;color:#fff}
+header.solid{background:var(--bg);color:var(--fg);box-shadow:0 1px 0 var(--line)}
+header.dark-page{color:var(--fg)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:var(--serif);font-size:1.7rem;letter-spacing:.28em;text-decoration:none;font-weight:600}
+.links{display:flex;gap:2rem;align-items:center}
+.links a.l{position:relative;text-decoration:none;font-size:.9rem;padding:.3rem 0}
+.links a.l::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.links a.l:hover::after,.links a.l.on::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:0;color:inherit;font:inherit;padding:.6rem;cursor:pointer}
+@media(max-width:860px){.burger{display:block}.links{position:fixed;inset:0;background:var(--forest);color:#fff;flex-direction:column;justify-content:center;gap:1.6rem;font-family:var(--serif);font-size:2rem;transform:translateY(-100%);transition:transform .5s}.links a.l{font-size:2rem}.links.open{transform:none}.burger{position:relative;z-index:2}}
+.hero{min-height:100svh;color:#fff;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:radial-gradient(60% 70% at 72% 38%,#5b7a69 0,transparent 60%),radial-gradient(40% 50% at 80% 70%,#C7A77A55,transparent 70%),linear-gradient(135deg,#0f2b23,#173C32 55%,#22463b);padding:140px 0 80px}
+.hero::before{content:"";position:absolute;inset:0;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero .wrap{position:relative;display:grid;gap:2rem}
+.hero h1{max-width:12ch}.hero p.s{max-width:46ch;font-size:1.1rem;opacity:.88}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.port{position:absolute;right:6%;bottom:0;height:88%;width:auto;z-index:0}@media(max-width:700px){.port{right:-20%;opacity:.35}}.ph{background-size:cover;background-position:center}.float{position:absolute;right:clamp(20px,4vw,48px);bottom:0;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.25);padding:1.1rem 1.4rem;border-radius:14px;font-family:var(--serif);font-size:1.4rem}
+@media(max-width:700px){.float{display:none}}
+.demo-tag{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px dashed var(--gold);color:var(--gold);padding:.2rem .6rem;border-radius:99px}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.5rem;border-block:1px solid var(--line);padding:2.4rem 0}
+.trust div{display:flex;gap:.9rem;align-items:center;font-weight:500}.trust i{width:10px;height:10px;border:1px solid var(--gold);transform:rotate(45deg);flex:none}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem;margin-top:3rem}
+.tc{position:relative;overflow:hidden;border-radius:6px;min-height:340px;color:#fff;padding:1.6rem;display:flex;flex-direction:column;justify-content:flex-end;grid-column:span 2;text-decoration:none;background:var(--g)}
+.tc:nth-child(1),.tc:nth-child(4){grid-column:span 3;min-height:440px}
+.tc::before{content:"";position:absolute;inset:0;background:var(--g);background-size:cover;background-position:center;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.tc:hover::before{transform:scale(1.08)}
+.tc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 60%)}
+.tc>*{position:relative;z-index:1}.tc small{letter-spacing:.2em;color:var(--gold)}.tc p{font-size:.92rem;opacity:.9;margin:.5rem 0 .8rem}
+@media(max-width:860px){.grid6{grid-template-columns:1fr}.tc,.tc:nth-child(n){grid-column:auto;min-height:300px}}
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin:2rem 0}
+.chip{border:1px solid var(--line);background:none;color:inherit;border-radius:99px;padding:.55rem 1.2rem;cursor:pointer;font:inherit;font-size:.88rem}
+.chip[aria-pressed=true]{background:var(--forest);color:#fff;border-color:var(--forest)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.ba{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.8rem;cursor:pointer;text-align:left;color:inherit;font:inherit;transition:transform .4s}
+.ba:hover{transform:translateY(-4px)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:.8rem}
+.ph{aspect-ratio:4/5;display:grid;place-items:end start;padding:.5rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.ph.b{background:linear-gradient(160deg,#8a8f89,#4b524d)}.ph.a{background:linear-gradient(160deg,#6f8c7a,#173C32)}
+.note{font-size:.85rem;color:var(--mute);border-left:2px solid var(--gold);padding-left:1rem;margin-top:2rem;max-width:70ch}
+dialog{border:0;border-radius:10px;padding:1.5rem;max-width:min(620px,92vw);background:var(--card);color:var(--fg)}dialog::backdrop{background:rgba(10,14,12,.7)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;margin-top:3.5rem}
+.steps .line{position:absolute;top:18px;left:0;height:1px;width:100%;background:var(--line)}
+.steps .line b{display:block;height:100%;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+.step{position:relative;padding-top:3rem}.step span{position:absolute;top:0;left:0;font-family:var(--serif);font-size:1.5rem;color:var(--gold);background:var(--bg);padding-right:.8rem}
+@media(max-width:860px){.steps{grid-template-columns:1fr;gap:1.6rem;padding-left:2rem;border-left:1px solid var(--gold)}.steps .line{display:none}.step{padding-top:0}.step span{position:static;display:block;background:none}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.split .vis{aspect-ratio:4/5;border-radius:6px;background:radial-gradient(circle at 30% 30%,#C7A77A55,transparent 50%),linear-gradient(160deg,#A5B5A5,#173C32)}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+ul.tick{list-style:none;padding:0}ul.tick li{padding:.7rem 0;border-bottom:1px solid var(--line)}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem;margin-top:2.5rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.8rem}.card blockquote{margin:0 0 1rem;font-family:var(--serif);font-size:1.35rem;line-height:1.3}
+.art{text-decoration:none;display:block}.art .im{aspect-ratio:16/10;border-radius:6px;margin-bottom:1rem;background:var(--g);background-size:cover;background-position:center;transition:transform .6s}.art:hover .im{transform:scale(1.02)}
+.final{background:linear-gradient(135deg,#0f2b23,#173C32);color:#fff;text-align:center}.final h2{max-width:16ch;margin:0 auto 1rem}.final p{max-width:52ch;margin:0 auto 2rem;opacity:.85}
+details{border-bottom:1px solid var(--line);padding:1rem 0}summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";color:var(--gold)}details[open] summary::after{content:"–"}
+footer{background:var(--ink);color:#d8d5cc;padding:80px 0 40px}footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:2.5rem}
+footer h4{font-family:var(--serif);font-size:1.2rem;color:var(--gold);margin:0 0 1rem;font-weight:500}footer a{display:block;text-decoration:none;padding:.2rem 0;font-size:.92rem}footer a:hover{color:var(--gold)}
+@media(max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+.curtain{position:fixed;inset:0;z-index:100;display:flex;pointer-events:none}.curtain i{flex:1;background:var(--forest);transform:scaleY(0);border-right:1px solid rgba(255,255,255,.07)}.curtain b{position:absolute;inset:0;display:grid;place-items:center;font:600 clamp(1.4rem,4vw,2.4rem) var(--serif);letter-spacing:.4em;color:var(--gold);opacity:0}
+#pr{position:fixed;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;z-index:99}
+#cur{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:98;opacity:0;transition:width .3s,height .3s,margin .3s,background .3s}#cur.big{width:64px;height:64px;margin:-14px 0 0 -14px;background:rgba(199,167,122,.2)}@media(hover:none){#cur{display:none}}
+.marq{display:flex;width:max-content;animation:mq 32s linear infinite;font:italic 500 clamp(3rem,8vw,7rem)/1.1 var(--serif);-webkit-text-stroke:1px var(--fg);color:transparent}.marq span{white-space:pre}@keyframes mq{to{transform:translateX(-50%)}}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem}.team .av{width:96px;height:96px;border-radius:50%;background:linear-gradient(150deg,#A5B5A5,#173C32);display:grid;place-items:center;color:#fff;font:500 2rem var(--serif);margin-bottom:1rem}
+.view{display:none}.view.on{display:block}
+.pagehead{padding:170px 0 60px}
+form{display:grid;gap:1.1rem;max-width:620px}label{font-size:.85rem;font-weight:600;display:grid;gap:.4rem}
+input,select,textarea{font:inherit;padding:.85rem 1rem;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg);width:100%}
+.err{color:#b3402f;font-weight:400;font-size:.8rem;min-height:1em}@media(prefers-color-scheme:dark){.err{color:#ff9c8a}}
+.msg{padding:1rem 1.2rem;border-radius:6px;border:1px solid var(--gold);display:none}.msg.on{display:block}
+.cmp{width:100%;border-collapse:collapse;margin-top:2rem}.cmp th,.cmp td{text-align:left;padding:1rem;border-bottom:1px solid var(--line);vertical-align:top;font-size:.93rem}.cmp th{font-family:var(--serif);font-size:1.3rem;font-weight:500}
+.scroll-x{overflow-x:auto}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Premium light palette + refined mobile experience (visual-only adjustments) */
+:root{
+  color-scheme:light;
+  --ivory:#F8F7F3;
+  --white:#FFFFFF;
+  --forest:#24483D;
+  --ink:#202823;
+  --sage:#C7D2C7;
+  --gold:#B99A6B;
+  --mute:#68736B;
+  --bg:#F8F7F3;
+  --fg:#202823;
+  --card:#FFFFFF;
+  --line:rgba(36,72,61,.13);
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#F8F7F3;--fg:#202823;--card:#FFFFFF;--mute:#68736B;
+    --line:rgba(36,72,61,.13)
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#F8F7F3;--fg:#202823;--card:#FFFFFF;--mute:#68736B;
+  --line:rgba(36,72,61,.13)
+}
+body{background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+header{color:var(--fg)}
+header.solid{background:rgba(248,247,243,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.hero{
+  color:var(--fg);
+  background:
+    radial-gradient(55% 65% at 78% 30%,rgba(199,210,199,.7) 0,transparent 68%),
+    radial-gradient(35% 45% at 12% 85%,rgba(185,154,107,.12),transparent 72%),
+    linear-gradient(135deg,#F8F7F3 0%,#F1F3ED 58%,#E7EEE7 100%);
+}
+.hero p.s{opacity:1;color:#56635A}
+.hero .eyebrow{color:#8C7048!important}
+.hero .btn.ghost{border-color:rgba(36,72,61,.38);color:var(--forest)}
+.port{opacity:.88}
+.float{background:rgba(255,255,255,.68);color:var(--forest);border-color:rgba(36,72,61,.12);box-shadow:0 12px 40px rgba(31,54,43,.08)}
+.final{background:linear-gradient(135deg,#24483D,#31594B)}
+footer{background:#202823}
+.card,.ba{box-shadow:0 8px 28px rgba(35,55,43,.035)}
+.card{border-radius:14px}
+.ba{border-radius:14px}
+.tc{border-radius:12px}
+.art .im,.split .vis{border-radius:12px}
+.btn{box-shadow:0 5px 16px rgba(36,72,61,.08)}
+.btn.gold{background:#DCC8A7;border-color:#DCC8A7;color:#202823}
+.btn.gold:hover{background:#CFB58A}
+.demo-tag{color:#927344}
+@media(max-width:860px){
+  html{scroll-padding-top:76px}
+  body{font-size:15px;line-height:1.7}
+  .wrap{padding-left:22px;padding-right:22px}
+  section{padding:68px 0}
+  .nav{height:70px}
+  .logo{font-size:1.45rem;letter-spacing:.22em}
+  .burger{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:.62rem .9rem}
+  .links{
+    inset:0;background:rgba(248,247,243,.98);color:var(--forest);
+    -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+    gap:1.35rem;padding:90px 24px 36px;
+  }
+  .links a.l{font-family:var(--sans);font-size:1.12rem;font-weight:500;letter-spacing:.01em}
+  .links .btn{font-family:var(--sans);font-size:.92rem;margin-top:.6rem}
+  .hero{min-height:88svh;min-height:88dvh;padding:120px 0 54px;align-items:flex-end}
+  .hero .wrap{gap:1.35rem}
+  .hero h1{font-size:clamp(3.05rem,12.5vw,4.5rem);max-width:11ch;letter-spacing:-.035em;line-height:.98}
+  .hero p.s{font-size:1rem;max-width:34ch;line-height:1.75}
+  .hero .eyebrow{font-size:.66rem;letter-spacing:.16em;max-width:30ch;line-height:1.7}
+  .cta-row{gap:.7rem}
+  .cta-row .btn{width:100%;justify-content:center;min-height:50px;padding:.9rem 1rem}
+  .port{height:64%;right:-19%;opacity:.18}
+  .float{display:none}
+  .trust{grid-template-columns:1fr 1fr;gap:1.15rem;padding:1.6rem 0}
+  .trust div{font-size:.82rem;line-height:1.45;align-items:flex-start;gap:.65rem}
+  .trust i{margin-top:.3rem;width:8px;height:8px}
+  .grid6{gap:.9rem;margin-top:2rem}
+  .tc,.tc:nth-child(n){min-height:290px;padding:1.35rem;border-radius:12px}
+  .tc h3{font-size:1.65rem}
+  .filters{gap:.45rem;margin:1.5rem 0}
+  .chip{padding:.5rem .85rem;font-size:.8rem}
+  .gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+  .ba{padding:.55rem;font-size:.88rem}
+  .pair{gap:3px}
+  .ph{font-size:.58rem;letter-spacing:.08em}
+  .steps{gap:1.4rem}
+  .split{gap:2rem}
+  .split .vis{aspect-ratio:5/4}
+  .cards3,.team{grid-template-columns:1fr;gap:.85rem}
+  .card{padding:1.35rem}
+  .card blockquote{font-size:1.25rem}
+  .pagehead{padding:132px 0 52px}
+  .pagehead h1{font-size:clamp(2.8rem,11vw,4rem)}
+  .cmp th,.cmp td{padding:.8rem .7rem;font-size:.82rem;min-width:110px}
+  .cmp th{font-size:1.15rem}
+  .final .cta-row{max-width:420px;margin-inline:auto}
+  footer{padding:54px 0 30px}
+  footer .cols{grid-template-columns:1fr 1fr;gap:1.7rem 1rem}
+  footer .cols>div:first-child{grid-column:1/-1}
+  footer .cols>div:last-child{grid-column:1/-1}
+}
+@media(max-width:420px){
+  .wrap{padding-left:18px;padding-right:18px}
+  .hero h1{font-size:clamp(2.8rem,12vw,3.5rem)}
+  .trust{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .tc,.tc:nth-child(n){min-height:265px}
+}
+@media(hover:none){
+  .tc:hover::before{transform:none}
+  .ba:hover,.btn:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+/* Responsive menu visibility and stacking fix */
+@media(max-width:860px){
+  #hd{z-index:100}
+  #hd .nav{position:relative;z-index:101}
+  #bg{
+    display:inline-flex!important;align-items:center;justify-content:center;
+    position:relative;z-index:120;min-width:76px;min-height:44px;
+    color:var(--forest);background:rgba(255,255,255,.82);
+    border:1px solid rgba(36,72,61,.2);box-shadow:0 4px 18px rgba(30,55,43,.08);
+    -webkit-tap-highlight-color:transparent
+  }
+  #lk{
+    position:fixed;inset:0;z-index:110;visibility:hidden;opacity:0;
+    pointer-events:none;transform:translateY(-18px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:1.35rem;padding:100px 24px 36px;
+    background:#F8F7F3;color:#24483D;
+    transition:opacity .25s ease,transform .25s ease,visibility .25s ease;
+  }
+  #lk.open{
+    visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0);
+  }
+  #lk a{position:relative;z-index:1}
+  #lk .btn{display:inline-flex}
+}
+
+
+@media(max-width:860px){
+  #hd{z-index:100}
+  #hd .nav{position:relative;z-index:101}
+  #bg{z-index:130;pointer-events:auto;touch-action:manipulation}
+  #lk.open{display:flex!important}
+  #lk:not(.open){display:flex!important}
+  #lk.open a{opacity:1;visibility:visible}
+}
+
+</style></head>
+<body>
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>FOLLICLE</b></div><div id="pr"></div><div id="cur"></div>
+<header id="hd"><div class="wrap nav">
+<a class="logo" href="#home" data-r>FOLLICLE</a>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="lk">Menu</button>
+<nav class="links" id="lk" aria-label="Main">
+<a class="l" href="#home" data-r>Home</a><a class="l" href="#treatments" data-r>Treatments</a><a class="l" href="#results" data-r>Results</a><a class="l" href="#approach" data-r>Our Approach</a><a class="l" href="#about" data-r>About</a>
+<a class="btn gold" href="#contact" data-r>Book a Consultation</a></nav></div></header>
+<main>
+<div class="view on" id="v-home">
+<section class="hero"><svg class="port" viewBox="0 0 400 600" role="img" aria-label="Editorial illustration of a confident adult with a full head of hair"><defs><linearGradient id="sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d1ab8f"/><stop offset="1" stop-color="#9c7658"/></linearGradient><linearGradient id="cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e4d8"/><stop offset="1" stop-color="#b9b3a3"/></linearGradient></defs><path d="M0 600C18 480 110 445 200 432c90 13 182 48 200 168Z" fill="url(#cl)"/><path d="M168 360h64v90c-20 14-44 14-64 0Z" fill="#8a6549"/><ellipse cx="200" cy="240" rx="92" ry="118" fill="url(#sk)"/><ellipse cx="108" cy="250" rx="12" ry="24" fill="#9c7658"/><ellipse cx="292" cy="250" rx="12" ry="24" fill="#9c7658"/><path d="M104 232C92 112 168 66 212 74c82 12 98 84 84 158-8-62-44-100-96-100-52 0-86 38-96 100Z" fill="#2a2018"/><path d="M130 120c30-30 90-40 130-10" stroke="#4a3a2c" stroke-width="3" fill="none" opacity=".6"/></svg><div class="wrap">
+<span class="eyebrow" style="color:var(--gold)">Personalized care. Evidence-led treatment.</span>
+<h1 data-split>Rediscover the Confidence That Feels Like You.</h1>
+<p class="s">Personalized hair restoration guided by medical expertise, thoughtful planning, and natural-looking results.</p>
+<div class="cta-row"><a class="btn gold" href="#contact" data-r>Book Your Consultation <span class="arrow">→</span></a><a class="btn ghost" href="#treatments" data-r>Explore Our Treatments</a></div>
+<div class="float">Your journey, personalized.</div></div></section>
+<section style="padding-block:0"><div class="wrap"><div class="trust rv"><div><i></i>Personalized Treatment Plans</div><div><i></i>Qualified Medical Professionals</div><div><i></i>Modern Restoration Techniques</div><div><i></i>Patient-Centered Aftercare</div></div></div></section>
+<section style="padding:3rem 0;overflow:hidden" aria-hidden="true"><div class="marq"></div></section>
+<section id="approach"><div class="wrap"><span class="eyebrow">Treatments</span><h2 data-split>An Approach Designed Around You.</h2>
+<div class="grid6" id="tgrid"></div></div></section>
+<section id="results" style="background:var(--card)"><div class="wrap"><span class="eyebrow">Results</span><h2>Considered, natural-looking outcomes.</h2>
+<p class="mute" style="max-width:60ch;margin-top:1rem"><span class="demo-tag">Demo placeholders</span> The tiles below are illustrative placeholders, not real patient results.</p>
+<div class="filters" id="flt" role="group" aria-label="Filter results"></div><div class="gal" id="gal"></div>
+<p class="note">Individual results vary. Treatment suitability and outcomes depend on individual circumstances. Images should only be used with appropriate permission and accurate context.</p></div></section>
+<section><div class="wrap"><span class="eyebrow">The Patient Journey</span><h2>Four steps, no pressure.</h2>
+<div class="steps" id="steps"><div class="line"><b></b></div>
+<div class="step"><span>01</span><h3>Consultation</h3><p class="mute">Understand concerns, medical history, and goals.</p></div>
+<div class="step"><span>02</span><h3>Assessment</h3><p class="mute">Evaluate potential causes of hair loss and suitable treatment options.</p></div>
+<div class="step"><span>03</span><h3>Personalized Plan</h3><p class="mute">Discuss recommendations, expectations, risks, costs, and next steps.</p></div>
+<div class="step"><span>04</span><h3>Follow-up &amp; Aftercare</h3><p class="mute">Provide appropriate guidance and ongoing clinical follow-up.</p></div></div></div></section>
+<section style="background:var(--card)"><div class="wrap split"><div class="vis rv" role="img" aria-label="Demo placeholder: calm clinical consultation environment"></div>
+<div class="rv"><span class="eyebrow">Why Choose Us</span><h2>Medical Expertise. A More Personal Experience.</h2>
+<ul class="tick" style="margin-top:1.5rem"><li>Individualized treatment planning</li><li>Transparent discussions about costs and expectations</li><li>Careful attention to natural-looking outcomes</li><li>Clear aftercare guidance</li><li>A supportive patient experience</li></ul></div></div></section>
+<section><div class="wrap"><span class="eyebrow">Testimonials</span><h2>In their words.</h2>
+<p class="mute"><span class="demo-tag">Sample content</span> Replace with verified patient reviews before launch.</p>
+<div class="cards3"><div class="card rv"><blockquote>“I felt listened to, not sold to.”</blockquote><small class="mute">Sample patient A</small></div><div class="card rv"><blockquote>“The plan and the risks were explained clearly.”</blockquote><small class="mute">Sample patient B</small></div><div class="card rv"><blockquote>“Aftercare guidance was easy to follow.”</blockquote><small class="mute">Sample patient C</small></div></div></div></section>
+<section id="journal" style="background:var(--card)"><div class="wrap"><span class="eyebrow">Journal</span><h2>Understanding Hair Loss Starts With Understanding You.</h2>
+<div class="cards3" id="arts"></div></div></section>
+<section class="final"><div class="wrap"><h2 data-split>Your Next Chapter Starts With a Conversation.</h2><p>Speak with our team about your concerns, explore your options, and understand the next steps.</p>
+<div class="cta-row" style="justify-content:center"><a class="btn gold" href="#contact" data-r>Book a Consultation</a><a class="btn ghost" href="#contact" data-r>Contact Our Team</a></div>
+<p style="font-size:.8rem;margin-top:2rem;opacity:.7">A consultation does not guarantee treatment eligibility or results.</p></div></section>
+</div>
+
+<div class="view" id="v-treatments"><div class="wrap pagehead"><span class="eyebrow">Treatments</span><h1 data-split>Options, assessed individually.</h1>
+<p class="mute" style="max-width:60ch;margin-top:1.5rem">Suitability depends on a clinician’s assessment. No treatment works for everyone, and outcomes cannot be guaranteed.</p>
+<div class="scroll-x"><table class="cmp"><thead><tr><th></th><th>FUE</th><th>FUT</th></tr></thead><tbody>
+<tr><td>Technique</td><td>Individual follicular units are extracted one by one from the donor area.</td><td>A thin strip of donor scalp is removed and dissected into follicular units.</td></tr>
+<tr><td>Typical trade-offs</td><td>Donor area usually needs shaving or trimming; sessions can be long.</td><td>Leaves a linear scar; may allow many grafts in one session.</td></tr>
+<tr><td>Recovery</td><td>Varies by person; your clinician will give specific guidance.</td><td>Varies by person; wound care is part of aftercare.</td></tr></tbody></table></div>
+<h2 style="margin:4rem 0 1rem">Common questions</h2>
+<details><summary>Who may be suitable for a transplant?</summary><p class="mute">Candidacy depends on the cause of hair loss, donor hair availability, health and goals. It is decided at assessment.</p></details>
+<details><summary>What are the potential risks?</summary><p class="mute">These can include swelling, infection, scarring, shock loss and uneven growth. A clinician will discuss risks specific to you.</p></details>
+<details><summary>Are results guaranteed?</summary><p class="mute">No. Results vary between individuals.</p></details>
+<div style="margin-top:2.5rem"><a class="btn" href="#contact" data-r>Request a consultation <span class="arrow">→</span></a></div></div></div>
+
+<div class="view" id="v-about"><div class="wrap pagehead"><span class="eyebrow">About the Clinic</span><h1 data-split>Care that begins with listening.</h1>
+<p class="mute" style="max-width:60ch;margin-top:1.5rem">FOLLICLE is a fictional clinic created for this demo. The philosophy below is sample copy for a real clinic to replace with its own.</p>
+<div class="cards3"><div class="card rv"><h3>Philosophy</h3><p class="mute">Every plan starts with understanding the cause of hair loss, not with a procedure.</p></div><div class="card rv"><h3>Patient experience</h3><p class="mute">Unhurried consultations, plain-language explanations and honest conversations about costs.</p></div><div class="card rv"><h3>Medical approach</h3><p class="mute">Treatment is recommended only after clinical assessment, with risks and limits discussed.</p></div></div>
+<h2 style="margin:4rem 0 .5rem" data-split>Meet the team</h2><p><span class="demo-tag">Demo profiles</span> <span class="mute">Fictional placeholders, not real or licensed practitioners.</span></p>
+<div class="team"><div class="card rv"><div class="av">A</div><h3>Placeholder Name</h3><p class="mute">Lead clinician (demo role)</p></div><div class="card rv"><div class="av">B</div><h3>Placeholder Name</h3><p class="mute">Patient care coordinator (demo role)</p></div><div class="card rv"><div class="av">C</div><h3>Placeholder Name</h3><p class="mute">Aftercare nurse (demo role)</p></div></div>
+<div style="margin-top:3rem"><a class="btn" href="#contact" data-r>Book a consultation <span class="arrow">→</span></a></div></div></div>
+
+<div class="view" id="v-contact"><div class="wrap pagehead"><span class="eyebrow">Contact</span><h1 data-split>Start a conversation.</h1>
+<p class="mute" style="max-width:56ch;margin:1.5rem 0 2.5rem"><span class="demo-tag">Frontend demo</span> This form validates in your browser only. Nothing is sent and no appointment is booked. Please do not enter real health information.</p>
+<form id="cf" novalidate>
+<label>Full name<input name="n" autocomplete="name"><span class="err"></span></label>
+<label>Email<input name="e" type="email" autocomplete="email"><span class="err"></span></label>
+<label>Preferred contact method<select name="m"><option value="">Select…</option><option>Email</option><option>Phone</option></select><span class="err"></span></label>
+<label>Treatment interest<select name="t"><option value="">Select…</option><option>FUE Hair Transplant</option><option>FUT Hair Transplant</option><option>Non-Surgical Restoration</option><option>Hair Loss Consultation</option><option>Beard / Eyebrow Restoration</option></select><span class="err"></span></label>
+<label>Message (optional)<textarea name="x" rows="4"></textarea></label>
+<button class="btn" type="submit">Submit demo request</button>
+<div class="msg" id="ok" role="status">Demo only: your entries passed validation. Nothing was sent and no appointment has been booked.</div></form>
+<p class="note" style="margin-top:3rem">Demo location: 1 Example Street, Sampletown, 000000 (fictional). Tel: 000-000-0000 (demo).</p></div></div>
+</main>
+<footer><div class="wrap"><div class="cols"><div><a class="logo" href="#home" data-r style="font-size:1.6rem">FOLLICLE</a><p style="margin-top:1rem;max-width:34ch;opacity:.8">Advanced Hair Restoration &amp; Aesthetics. A fictional clinic created as a design demo.</p></div>
+<div><h4>Treatments</h4><a href="#treatments" data-r>FUE</a><a href="#treatments" data-r>FUT</a><a href="#treatments" data-r>Consultation</a></div>
+<div><h4>Clinic</h4><a href="#approach" data-r>Our Approach</a><a href="#results" data-r>Results</a><a href="#contact" data-r>Contact</a></div>
+<div><h4>Contact (demo)</h4><span style="font-size:.92rem">hello@example.com<br>000-000-0000<br>Sampletown (fictional)</span></div></div>
+<p style="font-size:.78rem;opacity:.65;margin:3rem 0 0;border-top:1px solid rgba(255,255,255,.15);padding-top:1.5rem">Privacy · Terms · Accessibility (demo placeholders). Medical disclaimer: information here is general and not medical advice. Individual results vary.</p></div></footer>
+<dialog id="dlg" aria-label="Result detail"><div id="dc"></div><button class="btn ghost" id="dx" style="margin-top:1rem">Close</button></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,G=window.gsap;
+const T=[["FUE Hair Transplant","Follicular unit extraction: individual hair groups are carefully moved from a donor area to thinning areas.","Discover FUE","linear-gradient(150deg,#2f5446,#173C32)"],["FUT Hair Transplant","Follicular unit transplantation uses a donor strip, with its own benefits and limitations, discussed neutrally at consultation.","Discover FUT","linear-gradient(150deg,#7d8f80,#2b4a3d)"],["Non-Surgical Restoration","Clinician-assessed options for suitable candidates. Not every option suits everyone.","Learn more","linear-gradient(150deg,#C7A77A,#6b5a3c)"],["Hair Loss Consultation","Assessment, diagnosis and personalized planning to understand what is behind your hair loss.","Book assessment","linear-gradient(150deg,#A5B5A5,#46604f)"],["Beard Restoration","Facial hair restoration may be possible for appropriate candidates.","Learn more","linear-gradient(150deg,#3b3f3c,#171B19)"],["Eyebrow Restoration","Personalized planning for suitable candidates.","Learn more","linear-gradient(150deg,#9a8466,#4a3f2e)"]];
+const enc=s=>`url('data:image/svg+xml,${encodeURIComponent(s)}')`;
+const strands=c=>{let p='';for(let i=0;i<46;i++){const x=i*13+6,h=120+((i*37)%110);p+=`<path d="M${x} 420C${x-30} ${420-h/2} ${x+40} ${420-h} ${x+8} ${420-h-70}" stroke="${c}" stroke-width="1.6" fill="none" opacity=".4"/>`}return enc(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice">${p}</svg>`)};
+const dots=(n,c)=>{let s=7,p='';for(let i=0;i<n;i++){s=(s*9301+49297)%233280;const a=s/233280*6.283;s=(s*9301+49297)%233280;const r=Math.sqrt(s/233280)*40;p+=`<circle cx="${50+Math.cos(a)*r*1.1}" cy="${62+Math.sin(a)*r*1.25}" r="1.6" fill="${c}"/>`}return enc(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125"><ellipse cx="50" cy="62" rx="46" ry="56" fill="#d1ab8f" opacity=".85"/>${p}</svg>`)};
+function deco(r){$$('.ph.b',r).forEach(e=>e.style.backgroundImage=dots(16,'#2a2018')+',linear-gradient(160deg,#8a8f89,#4b524d)');$$('.ph.a',r).forEach(e=>e.style.backgroundImage=dots(150,'#2a2018')+',linear-gradient(160deg,#6f8c7a,#173C32)')}
+$('.vis').style.background=enc(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#cfd8cf"/><path d="M40 500V230a80 80 0 0 1 160 0v270Z" fill="#f7f5f0"/><path d="M220 500V200a70 70 0 0 1 140 0v300Z" fill="#a5b5a5"/><rect x="0" y="420" width="400" height="80" fill="#173C32"/><circle cx="290" cy="150" r="28" fill="#C7A77A" opacity=".8"/></svg>`)+' center/cover';
+$('#tgrid').innerHTML=T.map((t,i)=>`<a class="tc rv" href="#${i<2?'treatments':'contact'}" data-r style="--g:${strands(i%2?'#fff':'#C7A77A')},${t[3]}"><small>0${i+1}</small><h3>${t[0]}</h3><p>${t[1]}</p><span>${t[2]} <span class="arrow">→</span></span></a>`).join('');
+const A=[["Common Causes of Hair Loss","6 min read","linear-gradient(150deg,#A5B5A5,#173C32)"],["FUE vs. FUT: Understanding the Differences","7 min read","linear-gradient(150deg,#C7A77A,#5c4a2e)"],["What to Expect During Hair Transplant Recovery","5 min read","linear-gradient(150deg,#46604f,#171B19)"]];
+$('#arts').innerHTML=A.map(a=>`<a class="art rv" href="#treatments" data-r><div class="im" style="--g:${strands('#fff')},${a[2]}"></div><small class="mute">${a[1]}</small><h3>${a[0]}</h3></a>`).join('');
+const Gd=[["Hairline Restoration","Hairline demo A"],["Hairline Restoration","Hairline demo B"],["Crown Restoration","Crown demo A"],["Crown Restoration","Crown demo B"],["Beard Restoration","Beard demo A"]];
+const cats=["All",...new Set(Gd.map(g=>g[0]))];
+$('#flt').innerHTML=cats.map((c,i)=>`<button class="chip" aria-pressed="${i==0}" data-c="${c}">${c}</button>`).join('');
+function gal(c){$('#gal').innerHTML=Gd.map((g,i)=>[g,i]).filter(([g])=>c=="All"||g[0]==c).map(([g,i])=>`<button class="ba" data-i="${i}" aria-label="Open ${g[1]} before and after (demo placeholder)"><div class="pair"><div class="ph b">Before</div><div class="ph a">After</div></div><strong>${g[0]}</strong><br><small class="mute">Demo placeholder</small></button>`).join('')}
+const _gal=gal;gal=c=>{_gal(c);deco(document)};gal("All");
+$('#flt').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x==b));gal(b.dataset.c)};
+$('#gal').onclick=e=>{const b=e.target.closest('.ba');if(!b)return;const g=Gd[b.dataset.i];$('#dc').innerHTML=`<h3>${g[0]}</h3><div class="pair" style="margin:1rem 0"><div class="ph b">Before</div><div class="ph a">After</div></div><p class="mute">Demo placeholder, not a real patient result. Individual results vary.</p>`;deco($('#dlg'));$('#dlg').showModal()};
+$('#dx').onclick=()=>$('#dlg').close();
+$('#dlg').onclick=e=>{if(e.target==e.currentTarget)e.currentTarget.close()};
+$('#bg').addEventListener('click',()=>{
+  const menu = $('#lk');
+  const open = menu.getAttribute('data-open') !== 'true';
+  menu.setAttribute('data-open', String(open));
+  menu.classList.toggle('open', open);
+  $('#bg').setAttribute('aria-expanded', String(open));
+  $('#bg').textContent = open ? 'Close' : 'Menu';
+});
+
+$$('#lk a').forEach(a=>a.addEventListener('click',()=>{
+  $('#lk').classList.remove('open');
+  $('#lk').setAttribute('data-open','false');
+  $('#bg').setAttribute('aria-expanded','false');
+  $('#bg').textContent='Menu';
+}));
+// split text
+$$('[data-split]').forEach(h=>{h.setAttribute('aria-label',h.textContent);h.innerHTML=h.textContent.split(' ').map(w=>`<span aria-hidden="true" style="display:inline-block;overflow:hidden;vertical-align:top"><span class="w" style="display:inline-block">${w}&nbsp;</span></span>`).join('')});
+// router
+const R=['home','treatments','about','contact'],map={results:'home',approach:'home',journal:'home'};
+function route(){const raw=(location.hash||'#home').slice(1),v=map[raw]||(R.includes(raw)?raw:'home');
+$$('.view').forEach(x=>x.classList.toggle('on',x.id=='v-'+v));
+$$('.links a.l').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+raw));
+$('#lk').classList.remove('open');$('#lk').setAttribute('data-open','false');$('#bg').textContent='Menu';$('#bg').setAttribute('aria-expanded','false');
+const hd=$('#hd');hd.classList.toggle('dark-page',v!='home');
+document.title=({home:'FOLLICLE — Advanced Hair Restoration & Aesthetics (Demo)',treatments:'Treatments — FOLLICLE (Demo)',contact:'Contact — FOLLICLE (Demo)',about:'About — FOLLICLE (Demo)'})[v];
+if(map[raw])setTimeout(()=>document.getElementById(raw)&&document.getElementById(raw).scrollIntoView({behavior:reduce?'auto':'smooth'}),30);else scrollTo(0,0);
+anim(v)}
+function anim(v){if(!G||reduce)return;if(window.ScrollTrigger){G.registerPlugin(ScrollTrigger);ScrollTrigger.getAll().forEach(t=>t.kill())}
+const root=$('#v-'+v);$$('[data-split]',root).forEach(h=>{const o={yPercent:0,rotate:0,opacity:1,duration:1.1,stagger:.08,ease:'expo.out'},top=h.closest('.hero,.pagehead')||!window.ScrollTrigger;G.fromTo($$('.w',h),{yPercent:130,rotate:8,opacity:0},top?{...o,delay:.6}:{...o,scrollTrigger:{trigger:h,start:'top 88%',once:true}})});
+if(!window.ScrollTrigger)return;
+$$('.rv',root).forEach((el,i)=>G.from(el,{opacity:0,y:40,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
+const b=$('.steps .line b',root);if(b)G.to(b,{scaleX:1,ease:'none',scrollTrigger:{trigger:'#steps',start:'top 75%',end:'bottom 60%',scrub:true}});
+if($('.port',root)){G.to('.port',{yPercent:-14,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});G.to('.float',{y:-10,repeat:-1,yoyo:true,duration:2.4,ease:'sine.inOut'})}
+$$('.tc,.art .im,.vis',root).forEach(el=>G.fromTo(el,{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.4,ease:'expo.inOut',clearProps:'clipPath',scrollTrigger:{trigger:el,start:'top 92%',once:true}}));
+$$('.marq',root).forEach(m=>G.to(m,{skewX:-6,ease:'none',scrollTrigger:{trigger:m,start:'top bottom',end:'bottom top',scrub:true}}));
+ScrollTrigger.refresh()}
+const mt='Consultation ✦ Assessment ✦ Personalized Plan ✦ Aftercare ✦ ';$('.marq').innerHTML=`<span>${mt.repeat(3)}</span><span>${mt.repeat(3)}</span>`;
+const tgt=()=>{const r=(location.hash||'#home').slice(1);return map[r]||(R.includes(r)?r:'home')};
+function go(){if(!G||reduce||tgt()==$('.view.on').id.slice(2)){route();return}
+const s=$$('.curtain i'),b=$('.curtain b');G.timeline().set(s,{transformOrigin:'50% 100%'}).to(s,{scaleY:1,duration:.6,stagger:{each:.07,from:'center'},ease:'power4.inOut'}).to(b,{opacity:1,duration:.25},'-=.3').add(route).to(b,{opacity:0,duration:.25},'+=.15').set(s,{transformOrigin:'50% 0%'}).to(s,{scaleY:0,duration:.7,stagger:{each:.07,from:'edges'},ease:'power4.inOut'},'-=.1')}
+addEventListener('hashchange',go);
+addEventListener('scroll',()=>{$('#pr').style.transform=`scaleX(${scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)})`},{passive:true});
+if(!reduce&&matchMedia('(hover:hover)').matches){const c=$('#cur');let x=0,y=0,tx=0,ty=0;addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;c.style.opacity=1;c.classList.toggle('big',!!e.target.closest('a,button,summary,.ba'))});(function l(){x+=(tx-x)*.18;y+=(ty-y)*.18;c.style.transform=`translate(${x-18}px,${y-18}px)`;requestAnimationFrame(l)})();
+$$('.tc,.card').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateY(${px*8}deg) rotateX(${-py*8}deg) translateZ(0)`});el.addEventListener('mouseleave',()=>el.style.transform='')})}
+addEventListener('scroll',()=>$('#hd').classList.toggle('solid',scrollY>40||$('#v-home').classList.contains('on')==false),{passive:true});
+// magnetic CTAs (desktop, pointer only)
+if(!reduce&&matchMedia('(hover:hover)').matches)$$('.btn').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.2}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+// form
+$('#cf').onsubmit=e=>{e.preventDefault();const f=e.target,v=n=>f.elements[n].value.trim();let ok=true;
+const chk=(n,bad,m)=>{const s=f.elements[n].parentElement.querySelector('.err');s.textContent=bad?m:'';if(bad)ok=false};
+chk('n',v('n').length<2,'Please enter your name.');chk('e',!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('e')),'Please enter a valid email.');chk('m',!v('m'),'Choose a contact method.');chk('t',!v('t'),'Choose a treatment interest.');
+$('#ok').classList.toggle('on',ok)};
+route();
+</script></body></html>
